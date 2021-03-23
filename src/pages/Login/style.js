@@ -1,10 +1,5 @@
 import styled from 'styled-components'
 
-export const Vertical = styled.div`
-    display:flex;
-    flex-flow:column;
-`
-
 export const Wrapper = styled.div`
     display:flex;
     height:100vh;

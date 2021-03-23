@@ -1,22 +1,42 @@
 import React, { Component } from 'react'
-
+// antd
 import { Row, Col, Typography, Form, Input, Button, Space } from 'antd'
 import { UserOutlined, LockOutlined, SafetyCertificateOutlined } from '@ant-design/icons';
+// utils
+import store from 'store'
+// api
+import { login } from '../../api/login'
+// router
+import { Redirect } from 'react-router-dom'
 // style
-import { Wrapper,Left,Right,Vertical } from './style'
+import { Wrapper,Left,Right } from './style'
 
-const { Title, Text } = Typography;
+
 
 
 // 登录的路由组件
 export default class Login extends Component {
 
     render() {
-        const onFinish = (values) => {
+        const onFinish = async (data) => {
             // 收集表单数据
-            console.log('Received values of form: ', values);
+            try{
+                const res = await login(data)
+                console.log(res)
+                store.set('user',res.data.data)
+                this.props.history.replace("/")
+            }catch(err){
+                console.log(err)
+            }
+            
         };
 
+        const { Title, Text } = Typography;
+
+
+        if( store.get('user') ){
+            return <Redirect to="/" />
+        }
 
         return (
             <Wrapper>
@@ -56,10 +76,7 @@ export default class Login extends Component {
                                     />
                                 </Form.Item>
 
-                                <Form.Item
-                                    name="password"
-                                    rules={[{ required: true, message: 'Please input your Password!' }]}
-                                >
+                                <Form.Item>
                                     <Row gutter={24}>
                                         <Col span={12}>
                                             <Form.Item
@@ -83,10 +100,10 @@ export default class Login extends Component {
                                     <Button type="primary" htmlType="submit" className="login-form-button">登录</Button>
                                 </Form.Item>
                             </Form>
-                            <Vertical>
+                            <div style={{display:'flex',flexFlow:'column'}}>
                                 <Text type="secondary">不要在公共场所保存登录信息</Text>
                                 <Text type="secondary">为了保证你的账号安全，不操作时请注销登录</Text>
-                            </Vertical>
+                            </div>
                         </Space>
 
                     </div>
