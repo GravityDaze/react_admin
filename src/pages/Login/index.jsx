@@ -1,52 +1,11 @@
 import React, { Component } from 'react'
+
 import { Row, Col, Typography, Form, Input, Button, Space } from 'antd'
 import { UserOutlined, LockOutlined, SafetyCertificateOutlined } from '@ant-design/icons';
-import styled from 'styled-components'
+// style
+import { Wrapper,Left,Right,Vertical } from './style'
 
 const { Title, Text } = Typography;
-
-const Vertical = styled.div`
-    display:flex;
-    flex-flow:column;
-`
-
-const Wrapper = styled.div`
-    display:flex;
-    height:100vh;
-`
-const Left = styled.div`
-    flex:1;
-    background:url('https://www.17sucai.com/preview/1424582/2020-10-10/login/img/wave-01.png') no-repeat center;
-    background-size:cover;
-    height:100%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    img{
-        width:50%;
-    }
-`
-
-const Right = styled.div`
-    width:610px;
-    display:flex;
-    align-items:center;
-    padding:0 70px;
-
-    .login{
-        width:100%;
-       
-       .login-form{
-           .login-form-button{
-               width:100%;
-           }
-       }
-    }
-    
-
-
-`
 
 
 // 登录的路由组件
