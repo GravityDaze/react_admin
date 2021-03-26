@@ -3,4 +3,5 @@ import styled from 'styled-components'
 export const Right = styled.div`
     display:flex;
     color:#fff;
+    align-items:center;
 `

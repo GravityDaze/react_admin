@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Menu, Layout } from 'antd'
 import * as Icon from '@ant-design/icons';
 import { Link,withRouter } from 'react-router-dom'
-import menuList from '../../../../config/menuConfig'
+import menuList from '../../config/menuConfig'
 const { SubMenu } = Menu;
 const { Sider } = Layout;
 

@@ -3,17 +3,17 @@ import store from 'store'
 import { Redirect,Route,Switch } from 'react-router-dom'
 import { Layout, Breadcrumb } from 'antd';
 
-// cmps
-import Header from './components/Header'
-import Sider from './components/Sider'
+// comps
+import Header from '../../components/Header'
+import Sider from '../../components/Sider'
 // sub-page
-import Home from '../Home'
-import Category from '../Category'
-import Product from '../Product'
-import Role from '../Role'
-import Bar from '../charts/Bar'
-import Pie from '../charts/Pie'
-import Line from '../charts/Line'
+import Home from '../../pages/Home'
+import Category from '../../pages/Category'
+import Product from '../../pages/Product'
+import Role from '../../pages/Role'
+import Bar from '../../pages/charts/Bar'
+import Pie from '../../pages/charts/Pie'
+import Line from '../../pages/charts/Line'
 
 const { Content } = Layout;
 
